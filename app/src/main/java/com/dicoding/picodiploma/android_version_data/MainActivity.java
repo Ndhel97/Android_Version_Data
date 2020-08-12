@@ -1,14 +1,17 @@
 package com.dicoding.picodiploma.android_version_data;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         list.addAll(AndroidData.getListData());
         showRecyclerList();
+
+        alertDialog();
     }
 
     private void showRecyclerList() {
@@ -70,5 +75,20 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void alertDialog() {
+        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
+        dialog.setMessage("You can click any link in this app to automatically open a browser and redirect you to the website.");
+        dialog.setTitle("Tips..");
+        dialog.setPositiveButton("Okay",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Toast.makeText(getApplicationContext(),"Your welcome...",Toast.LENGTH_LONG).show();
+                    }
+                });
+        AlertDialog alertDialog=dialog.create();
+        alertDialog.show();
     }
 }

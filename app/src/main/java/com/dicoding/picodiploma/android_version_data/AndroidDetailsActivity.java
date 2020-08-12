@@ -3,6 +3,7 @@ package com.dicoding.picodiploma.android_version_data;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +45,8 @@ public class AndroidDetailsActivity extends AppCompatActivity {
         androidPreceded.setText(getIntent().getStringExtra(EXTRA_PRECEDED));
         androidSucceeded.setText(getIntent().getStringExtra(EXTRA_SUCCEEDED));
         androidWebsite.setText(getIntent().getStringExtra(EXTRA_WEBSITE));
+
+        Linkify.addLinks(androidWebsite, Linkify.ALL);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

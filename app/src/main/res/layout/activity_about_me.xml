@@ -41,6 +41,7 @@
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -49,6 +50,7 @@
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/source"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
